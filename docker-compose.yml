@@ -4,13 +4,13 @@ services:
     image: nginx:1.12.2-alpine
     volumes:
       - ./.conf/nginx-a.conf:/etc/nginx/nginx.conf
+    ports:
+      - "3000:8001"
   appb:
     image: nginx:1.12.2-alpine
     volumes:
       - ./.conf/nginx-b.conf:/etc/nginx/nginx.conf
     ports:
-      - "8080:80"
-    links:
-      - appa
+      - "3001:8002"
 
   
