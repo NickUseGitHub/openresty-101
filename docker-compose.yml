@@ -14,6 +14,7 @@ services:
     image: openresty/openresty:alpine
     volumes: 
       - ./.conf/openresty.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - ./logs:/usr/local/openresty/nginx/logs
     links:
       - appa
       - appb
